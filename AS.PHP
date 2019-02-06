@@ -36,13 +36,13 @@
     <form name="vista">
       <p>
 		  <center>
-        <input type="text" name="bi" placeholder="Nombre"
+        <input type="text" name="biblioteca" placeholder="Nombre"
                 accesskey="1">
 	  </p>
 	  <br>
       <p>
 		  <center>
-        <input type="text" name="bio" placeholder="Categorias"
+        <input type="text" name="categoria" placeholder="Categorias"
                 accesskey="2">
       </p>
       <p>
@@ -66,14 +66,14 @@
       function saluda(evt) {
         evt.preventDefault();
         try {
-          const bi = vista.bi.value.trim();
-          const bio = vista.bio.value.trim();
-          if (!bi) {
+          const biblioteca = vista.biblioteca.value.trim();
+          const categoria = vista.categoria.value.trim();
+          if (!biblioteca) {
             throw new Error("Falta el nombre de la biblioteca");
-          } else if (!bio) {
+          } else if (!categoria) {
             throw new Error("Falta la categoria");
           }
-          respuesta = `Saludos a ${bi} y a ${bio}.`;
+          respuesta = `Se encontro la ${biblioteca} y la ${categoria}.`;
         } catch (e) {
           respuesta = e.message;
         }   
